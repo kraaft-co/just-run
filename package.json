@@ -1,0 +1,11 @@
+{
+  "name": "@kraaft/just-run",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "bin": "example/compileAndRun.js",
+  "description": "The goal of this tool is to provide en entry point to other monorepo internal tool",
+  "scripts": {
+    "example:run": "(cd example && node compileAndRun.js)",
+    "example:run2": "(cd example && node compileAndImport.js)"
+  }
+}
