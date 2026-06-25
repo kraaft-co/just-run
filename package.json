@@ -1,6 +1,6 @@
 {
   "name": "@kraaft/just-run",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "main": "lib/index.js",
   "bin": "example/compileAndRun.js",
   "description": "The goal of this tool is to provide en entry point to other monorepo internal tool",
