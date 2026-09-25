@@ -1,2 +1,3 @@
 example/lib
 example/.run-tool-cache
+example/.run-tool-lock
