@@ -123,6 +123,14 @@ listFile();
 - `enableLog` - Whether to enable log or not.
 - `type` - "module" if you want to export transpile code, "script" if you just want to run it.
 - `source` - An array of source files used to compute the cache key
+- `exclusiveBuild` - Only let one process at a time check the cache and build (default `true`).
+  Without it, processes started together on a machine without a build all run the build into the same
+  folder, and one of them can require a file another has just deleted. Waiting processes reuse the build
+  once it is done. The lock is a `.run-tool-lock` folder in `cwd`: add `.run-tool-lock*` to your `.gitignore`.
+  A lock whose process is dead, or left before the machine last booted, is taken over right away.
+  A lock held by a live process is never taken over, however long its build takes.
+- `exclusiveBuildTimeout` - How long (ms) a waiting process waits for the lock before printing a warning
+  (default `60000`). A lock whose process cannot be identified is taken over after this delay.
 
 
 ## Alternative solutions
